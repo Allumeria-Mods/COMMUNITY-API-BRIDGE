@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "product": "COMMUNITY-API-BRIDGE",
+  "repositoryRole": "distribution-only",
+  "channel": "stable",
+  "currentRelease": "0.15.2",
+  "gameBuild": "0.15.2",
+  "artifact": "Allumeria-Community-Bridge-0.15.2.zip",
+  "artifactSha256": "c7629db7c12b5b58a3778e5a0801b48be2139d013246a1be1375340582b20c97",
+  "payloadManifestSha256": "a6d29863373eb3c982f5669e64d4eaed14f52ecd6e25a73f75cefba635912bcf",
+  "payloadEntryCount": 20
+}
