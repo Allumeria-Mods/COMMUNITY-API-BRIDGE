@@ -1,0 +1,90 @@
+name: Public Projection CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-public-projection:
+    name: validate-public-projection
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout projection
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Reject mutation of immutable governed snapshots
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          git fetch --no-tags origin "${{ github.base_ref }}"
+          if git diff --name-status "origin/${{ github.base_ref }}...HEAD" -- releases content | grep -E '^(M|D|R|C)[[:space:]]'; then
+            echo "immutable governed snapshot/content mutation detected" >&2
+            exit 1
+          fi
+      - name: Validate public projection
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import re
+          from pathlib import Path
+
+          root = Path('.')
+          semver = re.compile(r'^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$')
+          pointer = json.loads((root / 'distribution.json').read_text(encoding='utf-8'))
+          assert pointer['schemaVersion'] in (2, 3)
+          assert pointer['channel'] == 'stable'
+          if pointer['schemaVersion'] == 2:
+              public = pointer.get('publicContent', {})
+              legacy_root = public.get('root')
+              if legacy_root:
+                  assert (root / legacy_root).is_dir()
+                  for name, record in public.get('files', {}).items():
+                      path = root / legacy_root / name
+                      assert path.is_file()
+                      assert hashlib.sha256(path.read_bytes()).hexdigest() == record['sha256']
+          else:
+              current = pointer.get('currentStable')
+              if current is not None:
+                  assert semver.fullmatch(current['version'])
+                  assert current['tag'] == current['version']
+                  assert (root / current['releaseDescriptor']).is_file()
+
+          descriptors = sorted((root / 'releases').glob('*/distribution.json')) if (root / 'releases').is_dir() else []
+          for descriptor in descriptors:
+              data = json.loads(descriptor.read_text(encoding='utf-8'))
+              assert data['schemaVersion'] == 3
+              assert semver.fullmatch(data['version'])
+              assert data['tag'] == data['version']
+              assert (root / data['contentRoot']).is_dir()
+              for record in data.get('files', []):
+                  path = root / record['path']
+                  assert path.is_file()
+                  assert hashlib.sha256(path.read_bytes()).hexdigest() == record['sha256']
+
+          forbidden = {'.cs', '.csproj', '.sln', '.slnf', '.feature'}
+          for path in root.rglob('*'):
+              if path.is_file():
+                  assert path.suffix.lower() not in forbidden
+                  assert path.name not in {'build-overrides.json', 'compatibility_recovery.py'}
+          PY
+      - name: Verify promoted stable release already exists remotely
+        if: github.event_name == 'pull_request'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --name-only "origin/${{ github.base_ref }}...HEAD" -- distribution.json | grep -q '^distribution.json$'; then
+            version="$(python3 -c "import json; print((json.load(open('distribution.json')).get('currentStable') or {}).get('version',''))")"
+            test -n "$version"
+            gh release view "$version" --repo "${{ github.repository }}" --json isDraft,tagName --jq 'select(.isDraft == false) | .tagName' | grep -Fx "$version"
+          fi
