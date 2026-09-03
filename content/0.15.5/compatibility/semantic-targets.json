@@ -1,0 +1,669 @@
+{
+  "schemaVersion": 2,
+  "targets": [
+    {
+      "anchors": [
+        "field:Allumeria.Audio.AudioClip::shortID System.UInt16"
+      ],
+      "completeSignature": "static System.Void ()",
+      "declaringType": "Allumeria.DataManagement.AssetLoading.AssetManager",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "assets.finalise",
+      "methodName": "Finalise",
+      "required": false,
+      "risk": "MEDIUM",
+      "subsystem": "Assets"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Audio.AudioClip::wav SoLoud.Wav"
+      ],
+      "completeSignature": "static System.Void (System.String,System.Int32)",
+      "declaringType": "Allumeria.DataManagement.AssetLoading.AssetManager",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "assets.load",
+      "methodName": "LoadAssets",
+      "required": false,
+      "risk": "MEDIUM",
+      "subsystem": "Assets"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Settings.AssetPack::relativeDir System.String"
+      ],
+      "completeSignature": "static System.Void ()",
+      "declaringType": "Allumeria.DataManagement.AssetLoading.AssetManager",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "assets.load-selected-packs",
+      "methodName": "LoadAssetsBasedOnPackIDs",
+      "required": false,
+      "risk": "MEDIUM",
+      "subsystem": "Assets"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.DataManagement.AssetLoading.AssetManager::sounds System.Collections.Generic.SortedDictionary`2<System.String,Allumeria.Audio.AudioClip>"
+      ],
+      "completeSignature": "static Allumeria.Audio.AudioClip (System.String)",
+      "declaringType": "Allumeria.DataManagement.AssetLoading.AssetManager",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "assets.sound",
+      "methodName": "GetSound",
+      "required": false,
+      "risk": "MEDIUM",
+      "subsystem": "Assets"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.DataManagement.AssetLoading.AssetManager::textures System.Collections.Generic.Dictionary`2<System.String,Allumeria.Rendering.Texture>"
+      ],
+      "completeSignature": "static Allumeria.Rendering.Texture (System.String)",
+      "declaringType": "Allumeria.DataManagement.AssetLoading.AssetManager",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "assets.texture",
+      "methodName": "GetTexture",
+      "required": false,
+      "risk": "MEDIUM",
+      "subsystem": "Assets"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Audio.AudioPlayer::soloud SoLoud.Soloud"
+      ],
+      "completeSignature": "static System.Void ()",
+      "declaringType": "Allumeria.Audio.AudioPlayer",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "audio.cleanup",
+      "methodName": "Cleanup",
+      "required": false,
+      "risk": "MEDIUM",
+      "subsystem": "Audio"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Audio.AudioClip::shortID System.UInt16"
+      ],
+      "completeSignature": "static System.UInt32 (Allumeria.Audio.AudioClip,OpenTK.Mathematics.Vector3,System.Single,System.Single)",
+      "declaringType": "Allumeria.Audio.AudioPlayer",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "audio.play-world",
+      "methodName": "PlaySoundWorld",
+      "required": false,
+      "risk": "MEDIUM",
+      "subsystem": "Audio"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Program+<>c::<>9 Allumeria.Program+<>c"
+      ],
+      "completeSignature": "static System.Void ()",
+      "declaringType": "Allumeria.Program",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "bootstrap.external-loader",
+      "methodName": "InitExternalLoader",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Bootstrap"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.ChunkManagement.World::timeManager Allumeria.Comfort.TimeManager"
+      ],
+      "completeSignature": "instance System.Void ()",
+      "declaringType": "Allumeria.Networking.PlayerConnection",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "dedicated.connection.send-chunks",
+      "methodName": "SendAllChunks",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "DedicatedServer"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.ChunkManagement.ChunkManager::chunks System.Collections.Generic.Dictionary`2<OpenTK.Mathematics.Vector3i,Allumeria.ChunkManagement.Chunk>"
+      ],
+      "completeSignature": "instance System.Void ()",
+      "declaringType": "Allumeria.Networking.PlayerConnection",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "dedicated.connection.tick",
+      "methodName": "OnTick",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "DedicatedServer"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.ChunkManagement.TickClock::ticksElapsed System.Int64"
+      ],
+      "completeSignature": "instance System.Void (System.Double)",
+      "declaringType": "Allumeria.Networking.InternalGameState",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "dedicated.internal-state.update",
+      "methodName": "Update",
+      "required": false,
+      "risk": "MEDIUM",
+      "subsystem": "DedicatedInternalState"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.EntitySystem.Entities.PlayerEntity::customisation Allumeria.DataManagement.Saving.PlayerCustomisation"
+      ],
+      "completeSignature": "instance System.Void (System.IO.BinaryReader)",
+      "declaringType": "Allumeria.Networking.Packets.PacketPlayerData",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "dedicated.player-data.decode",
+      "methodName": "Decode",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "DedicatedServer"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.ChunkManagement.WorldManager::world Allumeria.ChunkManagement.World"
+      ],
+      "buildScopedTargets": {
+        "0.15.5": {
+          "anchors": [
+            "field:Allumeria.Networking.PlayerConnection::associatedPlayer Allumeria.EntitySystem.Entities.PlayerEntity",
+            "method:Allumeria.ChunkManagement.World::AddPlayer instance System.Void (Allumeria.EntitySystem.Entities.PlayerEntity,System.Int16,System.Int32)"
+          ],
+          "assemblyMvid": "213b39a8-68fa-48ae-ba7a-4ab47ea462ac",
+          "assemblySha256": "d1d059d9ebf205e0aa6d231b04df4b62128ceb5fe06ab1a284efbf8f7ed71119",
+          "completeSignature": "instance System.Void ()",
+          "normalizedIlFingerprint": "c74f0742d8215fb0b05d6281f9efc619e41610b605102c0f1e8f2a3c97b93153"
+        }
+      },
+      "completeSignature": "instance System.Void ()",
+      "declaringType": "Allumeria.Networking.Packets.PacketPlayerData",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "dedicated.player-data.perform",
+      "methodName": "PerformAction",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "DedicatedServer"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Networking.Server::connectedClients System.Collections.Concurrent.ConcurrentDictionary`2<System.Int32,Allumeria.Networking.PlayerConnection>"
+      ],
+      "completeSignature": "instance System.Void ()",
+      "declaringType": "Allumeria.Networking.Server",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "dedicated.server.pre-tick",
+      "methodName": "PreTick",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "DedicatedServer"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Game::FULL_VERSION System.String"
+      ],
+      "completeSignature": "instance System.Void ()",
+      "declaringType": "Allumeria.Networking.Server",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "dedicated.server.start",
+      "methodName": "Start",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "DedicatedServer"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Networking.NetworkManager::connectionType Allumeria.Networking.NetworkManager+ConnectionType"
+      ],
+      "completeSignature": "instance System.Void ()",
+      "declaringType": "Allumeria.Networking.Server",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "dedicated.server.stop",
+      "methodName": "Stop",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "DedicatedServer"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Networking.NetworkManager::bytesSent System.Int64"
+      ],
+      "completeSignature": "instance System.Void ()",
+      "declaringType": "Allumeria.Networking.Server",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "dedicated.server.tick",
+      "methodName": "OnTick",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "DedicatedServer"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.ChunkManagement.WorldManager::world Allumeria.ChunkManagement.World"
+      ],
+      "completeSignature": "instance System.Void ()",
+      "declaringType": "Allumeria.ChunkManagement.WorldManager",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "dedicated.world.tick",
+      "methodName": "OnTick",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "DedicatedServer"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Rendering.TextureBatcher::batcher Allumeria.Rendering.TextureBatcher"
+      ],
+      "completeSignature": "static System.Void (System.String,System.Int32,System.Int32,System.Int32,OpenTK.Mathematics.Vector4,Allumeria.UI.Text.TextFont,System.Boolean,System.Boolean,System.Boolean)",
+      "declaringType": "Allumeria.UI.Text.TextRenderer",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "font.ui2d.color",
+      "methodName": "DrawTextColor",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Font.UI2D"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Rendering.TextureBatcher::batcher Allumeria.Rendering.TextureBatcher"
+      ],
+      "completeSignature": "static System.Void (System.String,System.Int32,System.Int32,System.Int32,Allumeria.UI.Text.TextFont,System.Boolean)",
+      "declaringType": "Allumeria.UI.Text.TextRenderer",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "font.ui2d.draw",
+      "methodName": "DrawText",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Font.UI2D"
+    },
+    {
+      "anchors": [
+        "member:System.Collections.Generic.List`1<System.String>::get_Count instance System.Int32 ()"
+      ],
+      "completeSignature": "static System.Int32 (System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,OpenTK.Mathematics.Vector4,Allumeria.UI.Text.TextFont,System.Boolean,System.Boolean)",
+      "declaringType": "Allumeria.UI.Text.TextRenderer",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "font.ui2d.draw-word-wrap",
+      "methodName": "DrawTextWordWrap",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Font.UI2D"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Rendering.TextureBatcher::batcher Allumeria.Rendering.TextureBatcher"
+      ],
+      "completeSignature": "static System.Void (System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<System.Int32>,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,OpenTK.Mathematics.Vector4,Allumeria.UI.Text.TextFont,System.Boolean,System.Boolean)",
+      "declaringType": "Allumeria.UI.Text.TextRenderer",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "font.ui2d.multiline",
+      "methodName": "DrawMultiline",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Font.UI2D"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Rendering.TextureBatcher::batcher Allumeria.Rendering.TextureBatcher"
+      ],
+      "completeSignature": "static System.Void (System.String,System.Int32,System.Int32,System.Int32,Allumeria.UI.Text.TextFont,System.Boolean)",
+      "declaringType": "Allumeria.UI.Text.TextRenderer",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "font.ui2d.shadow",
+      "methodName": "DrawTextShadow",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Font.UI2D"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.UI.Text.TextFont::autoKern System.Boolean"
+      ],
+      "completeSignature": "instance System.Int32 (System.Int32)",
+      "declaringType": "Allumeria.UI.Text.TextFont",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "font.ui2d.textfont.kerning",
+      "methodName": "GetKerning",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Font.UI2D"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.UI.Text.TextFont::autoKern System.Boolean"
+      ],
+      "completeSignature": "instance System.Void (System.Byte,System.Boolean)",
+      "declaringType": "Allumeria.UI.Text.TextFont",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "font.ui2d.textfont.load",
+      "methodName": "LoadFont",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Font.UI2D"
+    },
+    {
+      "anchors": [
+        "member:System.String::get_Chars instance System.Char (System.Int32)"
+      ],
+      "completeSignature": "static System.Int32 (System.String,Allumeria.UI.Text.TextFont)",
+      "declaringType": "Allumeria.UI.Text.TextRenderer",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "font.ui2d.width",
+      "methodName": "GetTextWidth",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Font.UI2D"
+    },
+    {
+      "anchors": [
+        "member:System.Collections.Generic.List`1<System.Int32>::.ctor instance System.Void ()"
+      ],
+      "completeSignature": "static System.ValueTuple`2<System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<System.Int32>> (System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,OpenTK.Mathematics.Vector4,Allumeria.UI.Text.TextFont,System.Boolean,System.Boolean)",
+      "declaringType": "Allumeria.UI.Text.TextRenderer",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "font.ui2d.wrap",
+      "methodName": "GenerateWrappedText",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Font.UI2D"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.UI.Text.TextRenderer::backgroundColour OpenTK.Mathematics.Vector4"
+      ],
+      "completeSignature": "static Allumeria.Meshing.Mesh (System.String,OpenTK.Mathematics.Vector4,Allumeria.UI.Text.TextFont,System.Boolean,System.Boolean)",
+      "declaringType": "Allumeria.UI.Text.TextRenderer",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "font.world3d.generate",
+      "methodName": "Generate3DText",
+      "required": false,
+      "risk": "MEDIUM",
+      "subsystem": "Font.World3D"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Input.InputManager::listenChannel Allumeria.Input.InputChannel"
+      ],
+      "completeSignature": "static System.Void (OpenTK.Windowing.GraphicsLibraryFramework.Keys)",
+      "declaringType": "Allumeria.Input.InputManager",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "input.listen-bind-key",
+      "methodName": "ListenModeBindKey",
+      "required": false,
+      "risk": "MEDIUM",
+      "subsystem": "Input"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.DataManagement.Translation.Translator::translationKey System.Collections.Generic.Dictionary`2<System.String,System.String>"
+      ],
+      "completeSignature": "static System.Boolean (System.String,System.String&)",
+      "declaringType": "Allumeria.DataManagement.Translation.Translator",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "localization.conditional",
+      "methodName": "GetTranslationConditional",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Localization"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.DataManagement.Translation.Translator::logMissing System.Boolean"
+      ],
+      "completeSignature": "static System.String (System.String)",
+      "declaringType": "Allumeria.DataManagement.Translation.Translator",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "localization.get",
+      "methodName": "GetTranslationFor",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Localization"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.DataManagement.Translation.Translator::translationKey System.Collections.Generic.Dictionary`2<System.String,System.String>"
+      ],
+      "completeSignature": "static System.Boolean (System.String)",
+      "declaringType": "Allumeria.DataManagement.Translation.Translator",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "localization.has",
+      "methodName": "HasTranslation",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Localization"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Rendering.TextureBatcher::batcher Allumeria.Rendering.TextureBatcher"
+      ],
+      "buildOnly": [
+        "0.15.5"
+      ],
+      "buildScopedTargets": {
+        "0.15.5": {
+          "anchors": [
+            "field:Allumeria.Rendering.TextureBatcher::batcher Allumeria.Rendering.TextureBatcher"
+          ],
+          "assemblyMvid": "213b39a8-68fa-48ae-ba7a-4ab47ea462ac",
+          "assemblySha256": "d1d059d9ebf205e0aa6d231b04df4b62128ceb5fe06ab1a284efbf8f7ed71119",
+          "completeSignature": "static System.Void (System.String,System.Int32,System.Int32,System.Int32,OpenTK.Mathematics.Vector4,Allumeria.UI.Text.TextFont,System.Boolean,System.Boolean,System.Boolean)",
+          "normalizedIlFingerprint": "a6262941a88ab0b85999ee45d95cb5cf05066ba8987479c002c8e59f04a04acd"
+        }
+      },
+      "completeSignature": "static System.Void (System.String,System.Int32,System.Int32,System.Int32,OpenTK.Mathematics.Vector4,Allumeria.UI.Text.TextFont,System.Boolean,System.Boolean,System.Boolean)",
+      "declaringType": "Allumeria.UI.Text.TextRenderer",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "localization.literal.0155.text-renderer.color",
+      "methodName": "DrawTextColor",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Localization.LiteralMediation"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Rendering.TextureBatcher::batcher Allumeria.Rendering.TextureBatcher"
+      ],
+      "buildOnly": [
+        "0.15.5"
+      ],
+      "buildScopedTargets": {
+        "0.15.5": {
+          "anchors": [
+            "field:Allumeria.Rendering.TextureBatcher::batcher Allumeria.Rendering.TextureBatcher"
+          ],
+          "assemblyMvid": "213b39a8-68fa-48ae-ba7a-4ab47ea462ac",
+          "assemblySha256": "d1d059d9ebf205e0aa6d231b04df4b62128ceb5fe06ab1a284efbf8f7ed71119",
+          "completeSignature": "static System.Void (System.String,System.Int32,System.Int32,System.Int32,Allumeria.UI.Text.TextFont,System.Boolean)",
+          "normalizedIlFingerprint": "a999e86b7035860c66c6614db9c81ddc5122547bbc32483ddea59ae08d02cbbb"
+        }
+      },
+      "completeSignature": "static System.Void (System.String,System.Int32,System.Int32,System.Int32,Allumeria.UI.Text.TextFont,System.Boolean)",
+      "declaringType": "Allumeria.UI.Text.TextRenderer",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "localization.literal.0155.text-renderer.draw",
+      "methodName": "DrawText",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Localization.LiteralMediation"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Rendering.TextureBatcher::batcher Allumeria.Rendering.TextureBatcher"
+      ],
+      "buildOnly": [
+        "0.15.5"
+      ],
+      "buildScopedTargets": {
+        "0.15.5": {
+          "anchors": [
+            "field:Allumeria.Rendering.TextureBatcher::batcher Allumeria.Rendering.TextureBatcher"
+          ],
+          "assemblyMvid": "213b39a8-68fa-48ae-ba7a-4ab47ea462ac",
+          "assemblySha256": "d1d059d9ebf205e0aa6d231b04df4b62128ceb5fe06ab1a284efbf8f7ed71119",
+          "completeSignature": "static System.Void (System.String,System.Int32,System.Int32,System.Int32,Allumeria.UI.Text.TextFont,System.Boolean)",
+          "normalizedIlFingerprint": "6762769bfde70a37a88ee36c71be7e269ef02dd80259db5f58e38548330f80b5"
+        }
+      },
+      "completeSignature": "static System.Void (System.String,System.Int32,System.Int32,System.Int32,Allumeria.UI.Text.TextFont,System.Boolean)",
+      "declaringType": "Allumeria.UI.Text.TextRenderer",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "localization.literal.0155.text-renderer.shadow",
+      "methodName": "DrawTextShadow",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Localization.LiteralMediation"
+    },
+    {
+      "anchors": [
+        "member:System.Collections.Generic.List`1<System.String>::get_Count instance System.Int32 ()"
+      ],
+      "buildOnly": [
+        "0.15.5"
+      ],
+      "buildScopedTargets": {
+        "0.15.5": {
+          "anchors": [
+            "member:System.Collections.Generic.List`1<System.String>::get_Count instance System.Int32 ()"
+          ],
+          "assemblyMvid": "213b39a8-68fa-48ae-ba7a-4ab47ea462ac",
+          "assemblySha256": "d1d059d9ebf205e0aa6d231b04df4b62128ceb5fe06ab1a284efbf8f7ed71119",
+          "completeSignature": "static System.Int32 (System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,OpenTK.Mathematics.Vector4,Allumeria.UI.Text.TextFont,System.Boolean,System.Boolean)",
+          "normalizedIlFingerprint": "852c3ba0e94a3975c8b1af893302c70b0e3f62e16a58ee465ab5462f47f3948a"
+        }
+      },
+      "completeSignature": "static System.Int32 (System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,OpenTK.Mathematics.Vector4,Allumeria.UI.Text.TextFont,System.Boolean,System.Boolean)",
+      "declaringType": "Allumeria.UI.Text.TextRenderer",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "localization.literal.0155.text-renderer.word-wrap",
+      "methodName": "DrawTextWordWrap",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Localization.LiteralMediation"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.UI.Menus.CharacterSelectionMenu::list_newChar Allumeria.UI.UINodes.UIVerticalList",
+        "field:Allumeria.UI.Menus.CharacterSelectionMenu::input_charName Allumeria.UI.UINodes.UITextInput"
+      ],
+      "completeSignature": "instance System.Void (Allumeria.UI.UINode)",
+      "declaringType": "Allumeria.UI.Menus.CharacterSelectionMenu",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "localization.literal.character-selection.build-menu",
+      "methodName": "BuildMenu",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Localization.LiteralMediation"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.DataManagement.Translation.Translator::logMissing System.Boolean"
+      ],
+      "completeSignature": "static System.Void (System.String)",
+      "declaringType": "Allumeria.DataManagement.Translation.Translator",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "localization.load",
+      "methodName": "LoadTranslation",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Localization"
+    },
+    {
+      "anchors": [
+        "method:Allumeria.Networking.NetworkManager::AddPlayerToWorld static System.Void (System.Int32)"
+      ],
+      "buildScopedTargets": {
+        "0.15.5": {
+          "anchors": [
+            "field:Allumeria.Networking.Packets.PacketHandshake::flag System.Byte",
+            "method:Allumeria.Networking.NetworkManager::AddPlayerToWorld static System.Void (System.Int32)"
+          ],
+          "assemblyMvid": "213b39a8-68fa-48ae-ba7a-4ab47ea462ac",
+          "assemblySha256": "d1d059d9ebf205e0aa6d231b04df4b62128ceb5fe06ab1a284efbf8f7ed71119",
+          "completeSignature": "instance System.Void ()",
+          "normalizedIlFingerprint": "52bdc3d3c17665a12ba8b13008f5e4917f04e35ae27c2f31bb4b6c54db8d5407"
+        }
+      },
+      "completeSignature": "instance System.Void ()",
+      "declaringType": "Allumeria.Networking.Packets.PacketHandshake",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "network.join.handshake.perform",
+      "methodName": "PerformAction",
+      "required": false,
+      "risk": "HIGH",
+      "subsystem": "Networking.JoinIdempotency"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.ChunkManagement.WorldManager::world Allumeria.ChunkManagement.World"
+      ],
+      "completeSignature": "static System.Void (System.String,System.Boolean)",
+      "declaringType": "Allumeria.DataManagement.Saving.GameSaver",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "persistence.load-game",
+      "methodName": "LoadGame",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Persistence"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Blocks.Blocks.Block::blocks Allumeria.Blocks.Blocks.Block[]"
+      ],
+      "completeSignature": "instance System.Void (Allumeria.DataManagement.ListTag)",
+      "declaringType": "Allumeria.DataManagement.Saving.PaletteConstructor",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "persistence.palette.load",
+      "methodName": "LoadPalette",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Persistence"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.DataManagement.Saving.PaletteConstructor::blockPalette System.Int32[]"
+      ],
+      "completeSignature": "instance System.Void (System.Int32[]&)",
+      "declaringType": "Allumeria.DataManagement.Saving.PaletteConstructor",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "persistence.palette.remap",
+      "methodName": "UpdateBlockPalette",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Persistence"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.Blocks.Blocks.Block::blocks Allumeria.Blocks.Blocks.Block[]"
+      ],
+      "completeSignature": "static System.Void (Allumeria.DataManagement.ListTag)",
+      "declaringType": "Allumeria.DataManagement.Saving.PaletteConstructor",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "persistence.palette.save",
+      "methodName": "SavePalette",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Persistence"
+    },
+    {
+      "anchors": [
+        "field:Allumeria.ChunkManagement.WorldManager::world Allumeria.ChunkManagement.World"
+      ],
+      "buildScopedTargets": {
+        "0.15.5": {
+          "anchors": [
+            "field:Allumeria.ChunkManagement.WorldManager::world Allumeria.ChunkManagement.World"
+          ],
+          "assemblyMvid": "213b39a8-68fa-48ae-ba7a-4ab47ea462ac",
+          "assemblySha256": "d1d059d9ebf205e0aa6d231b04df4b62128ceb5fe06ab1a284efbf8f7ed71119",
+          "completeSignature": "static System.Void (System.Boolean,System.Boolean,System.Boolean,System.Boolean)",
+          "normalizedIlFingerprint": "fa72ac56189bae2f4196d2bfc705e23621474d98ce2f54ca3a0195dbc48e7d17"
+        }
+      },
+      "completeSignature": "static System.Void (System.Boolean,System.Boolean,System.Boolean)",
+      "declaringType": "Allumeria.DataManagement.Saving.GameSaver",
+      "fingerprintAlgorithm": "semantic-il-v2-resolved-tokens-branches-signatures",
+      "id": "persistence.save-game",
+      "methodName": "SaveGame",
+      "required": true,
+      "risk": "HIGH",
+      "subsystem": "Persistence"
+    }
+  ]
+}

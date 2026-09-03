@@ -1,12 +1,33 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "product": "COMMUNITY-API-BRIDGE",
-  "repositoryRole": "distribution-only",
+  "repositoryRole": "public-runtime-content-and-distribution",
   "channel": "stable",
   "currentRelease": "0.15.5",
   "gameBuild": "0.15.5",
   "artifact": "Allumeria-Community-Bridge-0.15.5.zip",
   "artifactSha256": "554141011ed9c55ab3f5016be9741750be328412ad1bc9941377748ca6268e1b",
   "payloadManifestSha256": "32f54bc1554e4928ec22d2d3e6b07007758c93f1a060bc646dd2e08965a8eaed",
-  "payloadEntryCount": 17
+  "payloadEntryCount": 17,
+  "publicContent": {
+    "gameBuild": "0.15.5",
+    "root": "content/0.15.5/compatibility",
+    "files": {
+      "manifest.json": {
+        "sha256": "ee7cd22621273356a9763c8ac009ae1d6ac50e67330b1ae116d82a57c706b2ad"
+      },
+      "manifest.schema.json": {
+        "sha256": "830b7eba5d559f1224069d06fdee74504954187729f620edee8fed467af09708"
+      },
+      "semantic-targets.json": {
+        "sha256": "e2dd8d0e01fd8976ba967e01186da657e3ecb092d4497ecb346dae3d74b8209a"
+      },
+      "translation-review.json": {
+        "sha256": "fc0c3e00efec9080aa7cb0f919f9166199ccb89102732c88396ecdd95cfc65bc"
+      },
+      "localization-schema-corrections.json": {
+        "sha256": "8f7254f6336ed2f0a780a684917853442986f7248ed1c9ffea202c18607f96b3"
+      }
+    }
+  }
 }

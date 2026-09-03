@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "builds": {
+    "0.15": [
+      {"sourceKey":"item.purple_fire_extinguisher","key":"item.purple_fire_extinguisher.desc","required":true,"verified":true,"provenance":"BDD reference015 runtime item-description contract"},
+      {"sourceKey":"item.purple_fire_lighter","key":"item.purple_fire_lighter.desc","required":true,"verified":true,"provenance":"BDD reference015 runtime item-description contract"},
+      {"sourceKey":"item.gold_flower","key":"item.gold_flower.desc","required":true,"verified":true,"provenance":"BDD reference015 runtime item-description contract"}
+    ],
+    "0.15.1": [
+      {"sourceKey":"item.purple_fire_extinguisher","key":"item.purple_fire_extinguisher.desc","required":true,"verified":true,"provenance":"BDD reference0151 retained runtime item-description contract"},
+      {"sourceKey":"item.purple_fire_lighter","key":"item.purple_fire_lighter.desc","required":true,"verified":true,"provenance":"BDD reference0151 retained runtime item-description contract"},
+      {"sourceKey":"item.gold_flower","key":"item.gold_flower.desc","required":true,"verified":true,"provenance":"BDD reference0151 retained runtime item-description contract"},
+      {"key":"item.thick_palm_log","required":true,"verified":true,"provenance":"Game/live/logs/missing_translations.txt runtime lookup evidence","runtimeEvidence":{"path":"logs/missing_translations.txt","key":"item.thick_palm_log","minimumOccurrences":1}}
+    ],
+    "0.15.2": [
+      {"sourceKey":"item.purple_fire_extinguisher","key":"item.purple_fire_extinguisher.desc","required":true,"verified":true,"inheritedFrom":"0.15.1","provenance":"0.15.2 retains the same duplicate source-key shape as 0.15.1; correction semantics reused from verified 0.15.1 evidence"},
+      {"sourceKey":"item.purple_fire_lighter","key":"item.purple_fire_lighter.desc","required":true,"verified":true,"inheritedFrom":"0.15.1","provenance":"0.15.2 retains the same duplicate source-key shape as 0.15.1; correction semantics reused from verified 0.15.1 evidence"},
+      {"sourceKey":"item.gold_flower","key":"item.gold_flower.desc","required":true,"verified":true,"inheritedFrom":"0.15.1","provenance":"0.15.2 retains the same duplicate source-key shape as 0.15.1; correction semantics reused from verified 0.15.1 evidence"}
+    ],
+    "0.15.5": [
+      {"sourceKey":"item.purple_fire_extinguisher","key":"item.purple_fire_extinguisher.desc","required":true,"verified":true,"inheritedFrom":"0.15.2","provenance":"0.15.5 duplicate source-key values are byte-equal to 0.15.2; correction semantics are explicitly inherited only for this exact build"},
+      {"sourceKey":"item.purple_fire_lighter","key":"item.purple_fire_lighter.desc","required":true,"verified":true,"inheritedFrom":"0.15.2","provenance":"0.15.5 duplicate source-key values are byte-equal to 0.15.2; correction semantics are explicitly inherited only for this exact build"},
+      {"sourceKey":"item.gold_flower","key":"item.gold_flower.desc","required":true,"verified":true,"inheritedFrom":"0.15.2","provenance":"0.15.5 duplicate source-key values are byte-equal to 0.15.2; correction semantics are explicitly inherited only for this exact build"}
+    ]
+  }
+}

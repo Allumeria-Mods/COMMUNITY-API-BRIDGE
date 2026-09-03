@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "policy": "Changed reference-source semantics require explicit recovered-build review before promotion.",
+  "entries": [
+    {
+      "key": "item.leaves",
+      "status": "APPROVED",
+      "evidence": {
+        "decision": "semantic-clarification",
+        "summary": "0.15.1 narrows the generic Leaves label to Birch Leaves; runtime Block initialization already identifies this key with birch leaf particle/texture context."
+      },
+      "sourceProvenance": {
+        "baselineBuild": "0.15",
+        "builds": {
+          "0.15.1": {
+            "baselineSourceFingerprint": "0e23163adf07b381c77d179daffb12aea79d1eea42f9daaceaf04ba4649e23f1",
+            "candidateSourceFingerprint": "2494ae934dec8859069b5fc4ed44ad2578258eda75de994852cf2046f3819826"
+          },
+          "0.15.2": {
+            "baselineSourceFingerprint": "0e23163adf07b381c77d179daffb12aea79d1eea42f9daaceaf04ba4649e23f1",
+            "candidateSourceFingerprint": "2494ae934dec8859069b5fc4ed44ad2578258eda75de994852cf2046f3819826"
+          }
+        }
+      }
+    },
+    {
+      "key": "item.paraglider.desc",
+      "status": "APPROVED",
+      "evidence": {
+        "decision": "meaning-unchanged-with-source-defect",
+        "summary": "Canonical meaning remains Descend slowly from great heights.; the 0.15.1 trailing .nah token is not supported by runtime glide behavior and is treated as an upstream source-pack defect.",
+        "sourceDefect": {
+          "code": "TRANSLATION_SOURCE_TEXT_CONTAMINATION",
+          "severity": "WARNING",
+          "canonicalSource": "Descend slowly from great heights.",
+          "observedSource": "Descend slowly from great heights.nah "
+        }
+      },
+      "sourceProvenance": {
+        "baselineBuild": "0.15",
+        "builds": {
+          "0.15.1": {
+            "baselineSourceFingerprint": "87ce0ce127b64d231986a1b36cc87307b5be63f603d3236d26697106c4bc4d95",
+            "candidateSourceFingerprint": "86cdbdcb9ede09e22553917ea58ddb39049ae69d86b870568f86778602adf114"
+          },
+          "0.15.2": {
+            "baselineSourceFingerprint": "87ce0ce127b64d231986a1b36cc87307b5be63f603d3236d26697106c4bc4d95",
+            "candidateSourceFingerprint": "27338d56993d8b9a44a5ac9880b699567fa28e060d3a7a38426b0a8e8d0695fb"
+          }
+        }
+      }
+    },
+    {
+      "key": "item.weak_health_potion.desc",
+      "status": "APPROVED",
+      "evidence": {
+        "decision": "source-correction",
+        "summary": "0.15.1 corrects the description from 10 HP to 50 HP, matching EffectRestoreHealth runtime value 50 already present in both builds."
+      },
+      "sourceProvenance": {
+        "baselineBuild": "0.15",
+        "builds": {
+          "0.15.1": {
+            "baselineSourceFingerprint": "9035e2ce9ba63d234954c4aa867a2355f7ab0c3a1c13d01b91d1637b0bb83a48",
+            "candidateSourceFingerprint": "5791a24602029e81169651e6bf165e21c3a879452735af46d7c2462e4923a64e"
+          },
+          "0.15.2": {
+            "baselineSourceFingerprint": "9035e2ce9ba63d234954c4aa867a2355f7ab0c3a1c13d01b91d1637b0bb83a48",
+            "candidateSourceFingerprint": "5791a24602029e81169651e6bf165e21c3a879452735af46d7c2462e4923a64e"
+          }
+        }
+      }
+    },
+    {
+      "key": "item.armour_potion.desc",
+      "status": "APPROVED",
+      "evidence": {
+        "decision": "gameplay-semantic-change",
+        "summary": "Armoured effect magnitude changes from 4 to 10 while duration remains five minutes; translation must follow the 0.15.1 value."
+      },
+      "sourceProvenance": {
+        "baselineBuild": "0.15",
+        "builds": {
+          "0.15.1": {
+            "baselineSourceFingerprint": "ccd955342a30c1d21938860bbc99f9ba32ba3944f5b7991f8b453ef9ec844ec1",
+            "candidateSourceFingerprint": "7cf261472352e69f34d719f95a0add73d699a23e3cc45af9612d22e661e8c0e1"
+          },
+          "0.15.2": {
+            "baselineSourceFingerprint": "ccd955342a30c1d21938860bbc99f9ba32ba3944f5b7991f8b453ef9ec844ec1",
+            "candidateSourceFingerprint": "7cf261472352e69f34d719f95a0add73d699a23e3cc45af9612d22e661e8c0e1"
+          }
+        }
+      }
+    },
+    {
+      "key": "guide.make_bed.desc",
+      "status": "APPROVED",
+      "evidence": {
+        "decision": "gameplay-semantic-change",
+        "summary": "0.15.2 replaces NPC-purchase guidance with the current bed time-acceleration behavior; translations must follow the recovered 0.15.2 source semantics."
+      },
+      "sourceProvenance": {
+        "baselineBuild": "0.15",
+        "builds": {
+          "0.15.2": {
+            "baselineSourceFingerprint": "f4b1183884f67c6a1a1e243c22b4a82bf1741e9669f03b02c98363d9d1e32084",
+            "candidateSourceFingerprint": "712f91d0a8a4efe007c534535f1e9454e517a5e857af21788e8364699f981667"
+          }
+        }
+      }
+    },
+    {
+      "key": "guide.pickaxe.desc",
+      "status": "APPROVED",
+      "evidence": {
+        "decision": "gameplay-semantic-change",
+        "summary": "0.15.2 adds Swing Speed stat guidance that affects block-breaking speed; translations must preserve the added gameplay meaning."
+      },
+      "sourceProvenance": {
+        "baselineBuild": "0.15",
+        "builds": {
+          "0.15.2": {
+            "baselineSourceFingerprint": "e9bfbabec902fc0e1d2c506613fa2f96ce76fddcfc683a46968d2f34d222052b",
+            "candidateSourceFingerprint": "d834e531593cf4ed9c0a76c264465266920b5d2c676ece01b47ba752938afe01"
+          }
+        }
+      }
+    },
+    {
+      "key": "guide.sword.desc",
+      "status": "APPROVED",
+      "evidence": {
+        "decision": "gameplay-semantic-change",
+        "summary": "0.15.2 adds explicit flint-sword weakness and upgrade-progression guidance; translations must preserve the added gameplay meaning."
+      },
+      "sourceProvenance": {
+        "baselineBuild": "0.15",
+        "builds": {
+          "0.15.2": {
+            "baselineSourceFingerprint": "724eca7c39bd27cc375c507491c8c1b1484f461ab99d6781089f3dff5369a0b3",
+            "candidateSourceFingerprint": "7d49d94c624a0913dda8d4ed69ef43d2433a4cd80003ac89afb7a000a8d16870"
+          }
+        }
+      }
+    },
+    {
+      "key": "loading.tip1",
+      "status": "APPROVED",
+      "evidence": {
+        "decision": "recovered-source-semantic-change",
+        "summary": "0.15.5 replaces recipe-keybind guidance with workstation-proximity crafting guidance. Bridge promotion accepts the recovered English source meaning; this is not final Traditional-Chinese wording or human UI acceptance.",
+        "reviewScope": "TECHNICAL_RECOVERED_SOURCE_ONLY"
+      },
+      "sourceProvenance": {
+        "baselineBuild": "0.15.2",
+        "builds": {
+          "0.15.5": {
+            "baselineSourceFingerprint": "d465f44947cd762120adb975859afe1c16e82b3490e30acbf77d70451b40e301",
+            "candidateSourceFingerprint": "e16e0940a7041c0d0395c29ae3b2f88bf6d4092d013302355c4d0ceea713e5d4"
+          }
+        }
+      }
+    },
+    {
+      "key": "loading.tip9",
+      "status": "APPROVED",
+      "evidence": {
+        "decision": "recovered-source-semantic-change",
+        "summary": "0.15.5 replaces trash-slot control guidance with the recovered bread/key tip. Bridge promotion records the changed source semantics without claiming final Traditional-Chinese wording or human UI acceptance.",
+        "reviewScope": "TECHNICAL_RECOVERED_SOURCE_ONLY"
+      },
+      "sourceProvenance": {
+        "baselineBuild": "0.15.2",
+        "builds": {
+          "0.15.5": {
+            "baselineSourceFingerprint": "769d163e5422c43bedb1b0e499f20eb61f43cde9cbadc9fe0e0087eda97230bb",
+            "candidateSourceFingerprint": "b2bd97c3185d2fc1646ff543416a2904a7b30d4e6c6341d1fb750e9e08c4d465"
+          }
+        }
+      }
+    },
+    {
+      "key": "settings.invert_mouse",
+      "status": "APPROVED",
+      "evidence": {
+        "decision": "source-label-terminology-change",
+        "summary": "0.15.5 changes the setting label from Invert Mouse to Invert Look. This technical recovered-source review does not approve final Traditional-Chinese wording or rendered UI.",
+        "reviewScope": "TECHNICAL_RECOVERED_SOURCE_ONLY"
+      },
+      "sourceProvenance": {
+        "baselineBuild": "0.15.2",
+        "builds": {
+          "0.15.5": {
+            "baselineSourceFingerprint": "bcda04f7772cefe928bd00c07dc38ac63fd2254dd9308d4a54d7ecf8f91f644c",
+            "candidateSourceFingerprint": "4731c01da3416e33edb8c8cfefb26007bf5381c3a908e7ed33dee4ebf2d3a3a0"
+          }
+        }
+      }
+    },
+    {
+      "key": "settings.mouse_sensitivity",
+      "status": "APPROVED",
+      "evidence": {
+        "decision": "source-label-terminology-change",
+        "summary": "0.15.5 changes the setting label from Mouse Sensitivity to Look Sensitivity. This technical recovered-source review does not approve final Traditional-Chinese wording or rendered UI.",
+        "reviewScope": "TECHNICAL_RECOVERED_SOURCE_ONLY"
+      },
+      "sourceProvenance": {
+        "baselineBuild": "0.15.2",
+        "builds": {
+          "0.15.5": {
+            "baselineSourceFingerprint": "4571896d8a4d41629ac328e4eecad4529c5d65c1f965a892dce6bdba97f2ee7b",
+            "candidateSourceFingerprint": "696ec4a4c9e9b36f5e34e395e2edf2fc16e6cf60f106cac5feb145d318916f0d"
+          }
+        }
+      }
+    },
+    {
+      "key": "ui.generic.click_here",
+      "status": "APPROVED",
+      "evidence": {
+        "decision": "source-label-terminology-change",
+        "summary": "0.15.5 changes the generic action label from Click Here! to Press Here!. This technical recovered-source review does not approve final Traditional-Chinese wording or rendered UI.",
+        "reviewScope": "TECHNICAL_RECOVERED_SOURCE_ONLY"
+      },
+      "sourceProvenance": {
+        "baselineBuild": "0.15.2",
+        "builds": {
+          "0.15.5": {
+            "baselineSourceFingerprint": "b2771451016e789cfe2795d44bf64682df6cfd405a872cf4bd276030a53045d4",
+            "candidateSourceFingerprint": "2733ea22d4a3ba76cb41ce0d4193d9bb7971f047d1e5df0a9d04123da8622a10"
+          }
+        }
+      }
+    }
+  ]
+}
